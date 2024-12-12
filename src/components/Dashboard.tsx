@@ -5,6 +5,7 @@ import { Student } from '../types';
 interface DashboardProps {
   students: Student[];
 }
+// hello bebe
 
 export function Dashboard({ students }: DashboardProps) {
   const totalStudents = students.length;
@@ -34,16 +35,16 @@ export function Dashboard({ students }: DashboardProps) {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-3">
       {stats.map((stat) => (
         <div
           key={stat.title}
-          className="bg-white rounded-xl shadow-sm p-6 transition-transform hover:scale-105"
+          className="p-6 transition-transform bg-white shadow-sm rounded-xl hover:scale-105"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-500 text-sm font-medium">{stat.title}</p>
-              <p className="text-2xl font-bold mt-2">{stat.value}</p>
+              <p className="text-sm font-medium text-gray-500">{stat.title}</p>
+              <p className="mt-2 text-2xl font-bold">{stat.value}</p>
             </div>
             <div className={`${stat.color} p-4 rounded-lg`}>
               <stat.icon className="w-6 h-6 text-white" />
